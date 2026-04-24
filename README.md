@@ -1,14 +1,3 @@
-Crie um README.md completo, profissional e bem formatado para o projeto SystemSchool.
-
-Contexto do projeto:
-- Sistema escolar completo
-- Frontend em React + TypeScript + Vite
-- Backend usando Supabase (Auth + Database + RLS)
-- Estrutura já organizada com pages (admin, teacher, student), services, routes, contexts e utils
-- Banco de dados definido em supabase/schema.sql
-
-O README deve seguir padrão GitHub (Markdown bem organizado) e ter estilo de documentação tipo wiki.
-
 ---
 
 ### Estrutura obrigatória do README:
