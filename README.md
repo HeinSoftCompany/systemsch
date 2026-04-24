@@ -91,23 +91,6 @@ VITE_SUPABASE_ANON_KEY=your_public_key
 
 ---
 
-## 🛠️ Como Rodar o Projeto
-
-npm install
-npm run dev
-
-URL:
-http://localhost:5173
-
----
-
-## 👤 Usuário Admin (Teste)
-
-email: admin@escola.com
-senha: 123456
-
----
-
 ## 🧪 Estrutura de Services
 
 Listar:
