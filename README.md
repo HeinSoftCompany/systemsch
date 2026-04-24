@@ -1,73 +1,210 @@
-# React + TypeScript + Vite
+Crie um README.md completo, profissional e bem formatado para o projeto SystemSchool.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Contexto do projeto:
+- Sistema escolar completo
+- Frontend em React + TypeScript + Vite
+- Backend usando Supabase (Auth + Database + RLS)
+- Estrutura já organizada com pages (admin, teacher, student), services, routes, contexts e utils
+- Banco de dados definido em supabase/schema.sql
 
-Currently, two official plugins are available:
+O README deve seguir padrão GitHub (Markdown bem organizado) e ter estilo de documentação tipo wiki.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+### Estrutura obrigatória do README:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 🎓 SystemSchool
 
-## Expanding the ESLint configuration
+Descrição do sistema (curta e profissional)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Tecnologias Utilizadas
+Listar:
+React, TypeScript, Vite, Supabase, PostgreSQL, ESLint
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧠 Arquitetura do Sistema
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Mostrar fluxo:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Frontend (React)
+↓
+Supabase (Auth + Database)
+↓
+PostgreSQL + RLS
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🔐 Autenticação
+
+Explicar:
+- login por email/senha
+- controle por role
+- sessão persistida
+
+Roles:
+- admin
+- teacher
+- student
+
+---
+
+## 🧩 Estrutura do Projeto
+
+Mostrar estrutura de pastas:
+
+src/
+ ├─ components/
+ ├─ contexts/
+ ├─ hooks/
+ ├─ lib/
+ │   └─ supabase.ts
+ ├─ pages/
+ │   ├─ admin/
+ │   ├─ teacher/
+ │   └─ student/
+ ├─ routes/
+ ├─ services/
+ ├─ types/
+ └─ utils/
+
+---
+
+## 📦 Banco de Dados
+
+Informar:
+- schema em supabase/schema.sql
+
+Listar principais tabelas:
+profiles, students, teachers, classes, subjects, activities, grades, announcements
+
+---
+
+## 🔗 Integração com Supabase
+
+Arquivo:
+src/lib/supabase.ts
+
+Explicar `.env`:
+
+VITE_SUPABASE_URL=your_project_url
+VITE_SUPABASE_ANON_KEY=your_public_key
+
+---
+
+## ⚠️ Segurança
+
+- .env não vai para GitHub
+- .env.example é usado como modelo
+- RLS ativo no banco
+
+---
+
+## 🛠️ Como Rodar o Projeto
+
+npm install
+npm run dev
+
+URL:
+http://localhost:5173
+
+---
+
+## 👤 Usuário Admin (Teste)
+
+email: admin@escola.com
+senha: 123456
+
+---
+
+## 🧪 Estrutura de Services
+
+Listar:
+authService, profileService, studentService, teacherService, classService, activityService, gradeService, announcementService
+
+---
+
+## 🔄 Fluxo de Login
+
+1. login
+2. retorno do user
+3. busca profile
+4. redirecionamento:
+
+admin → /admin
+teacher → /teacher
+student → /student
+
+---
+
+## 🛡️ Controle de Acesso
+
+- ProtectedRoute
+- AuthContext
+- RLS
+
+---
+
+## 📊 Funcionalidades
+
+Admin:
+- gerenciar alunos, professores, turmas, disciplinas
+- criar atividades
+- lançar notas
+- criar comunicados
+
+Professor:
+- visualizar turmas
+- criar atividades
+- lançar notas
+- criar comunicados
+
+Aluno:
+- visualizar atividades
+- visualizar notas
+- visualizar comunicados
+
+---
+
+## 📢 Comunicados
+
+- gerais
+- por role
+- por turma
+
+---
+
+## 🧮 Sistema de Notas
+
+- por bimestre
+- média automática
+- status:
+  aprovado, recuperação, reprovado
+
+---
+
+## 📈 Futuras Melhorias
+
+- criação automática de usuários via Auth
+- upload de arquivos
+- dashboard avançado
+- relatórios
+- SaaS
+
+---
+
+## 💼 Uso Comercial
+
+- sistema escolar
+- SaaS educacional
+- produto HeinSoft
+
+---
+
+## 🧑‍💻 Desenvolvido por
+
+HeinSoft Company
+
+---
