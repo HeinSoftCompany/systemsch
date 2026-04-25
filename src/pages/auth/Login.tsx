@@ -57,7 +57,7 @@ export const Login = () => {
       >
         <h1 style={{ margin: 0 }}>Entrar no SystemSchool</h1>
         <p style={{ margin: 0, color: '#4b5563' }}>
-          Use seu e-mail e senha cadastrados no Supabase.
+          Use seu e-mail e senha cadastrados no sistema.
         </p>
 
         <label htmlFor="email">E-mail</label>
